@@ -16,5 +16,9 @@
         <h1>${GameBean.countries.get(GameBean.currentNumber-1)}</h1>
         <img src="${GameBean.urls.get(GameBean.currentNumber-1)}" />
         
+        <form action="GameServlet2" method="POST">
+            Enter the country: <input type="text" name="country" value="" />
+            <input type="submit" value="Submit" name="submit" />
+        </form>
     </body>
 </html>

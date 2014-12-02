@@ -4,9 +4,17 @@
         <servlet-name>GameServlet</servlet-name>
         <servlet-class>com.flaggame.GameServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GameServlet2</servlet-name>
+        <servlet-class>com.flaggame.GameServlet2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GameServlet</servlet-name>
         <url-pattern>/GameServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GameServlet2</servlet-name>
+        <url-pattern>/GameServlet2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
