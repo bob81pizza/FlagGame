@@ -64,6 +64,7 @@ public class GameServlet extends HttpServlet {
             game.setPlayerName(name);
             game.setCurrentNumber(1);
             game.setCurrentScore(0);
+            game.setTotalQuestions(2);
             
         }
         

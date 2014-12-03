@@ -7,6 +7,7 @@ package com.flaggame;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,18 +38,30 @@ public class GameServlet2 extends HttpServlet {
         
         String answer = request.getParameter("country");
         
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet GameServlet2</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet GameServlet2 at " + g.getCurrentNumber() + answer + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String trimAnswer = answer.trim().toLowerCase();
+        String currentCountry = g.getCountries().get(g.getCurrentNumber()-1).toLowerCase();
+
+        if(trimAnswer.equals(currentCountry)){  //Answer is correct
+            g.setCurrentScore(g.getCurrentScore()+1);
+            g.setCorrect(true);
         }
+        else{
+            g.setCorrect(false);
+        }
+        g.setCurrentNumber(g.getCurrentNumber()+1);
+
+        RequestDispatcher dispatcher;
+        
+        if(g.getCurrentNumber() > g.getTotalQuestions()){
+            dispatcher = request.getRequestDispatcher("gameOver.jsp");
+            dispatcher.forward(request, response);
+        }
+        dispatcher = request.getRequestDispatcher("flagGame.jsp");
+        dispatcher.forward(request, response);
+
+        
+
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

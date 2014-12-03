@@ -20,6 +20,8 @@ public class Game {
     private String playerName;
     private int currentScore;
     private int currentNumber;
+    private int totalQuestions;
+    private boolean correct = false;
 
     /**
      * @return the difficulty
@@ -103,6 +105,34 @@ public class Game {
      */
     public void setCurrentNumber(int currentNumber) {
         this.currentNumber = currentNumber;
+    }
+
+    /**
+     * @return the totalQuestions
+     */
+    public int getTotalQuestions() {
+        return totalQuestions;
+    }
+
+    /**
+     * @param totalQuestions the totalQuestions to set
+     */
+    public void setTotalQuestions(int totalQuestions) {
+        this.totalQuestions = totalQuestions;
+    }
+
+    /**
+     * @return the correct
+     */
+    public boolean isCorrect() {
+        return correct;
+    }
+
+    /**
+     * @param correct the correct to set
+     */
+    public void setCorrect(boolean correct) {
+        this.correct = correct;
     }
     
     
