@@ -13,15 +13,32 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <c:if test="${GameBean.correct == true}">
-            <h2>Yay!</h2>
+        <c:if test="${GameBean.currentNumber > GameBean.totalQuestions}">
+            <c:if test = "${(GameBean.correct == false) && (GameBean.currentNumber > 1)}">
+                <h2>Incorrect. The correct answer was ${GameBean.countries.get(GameBean.currentNumber-2)}
+            </c:if>
+            <c:if test="${(GameBean.correct == true) && (GameBean.currentNumber > 1)}">
+                <h2>Correct. The country was ${GameBean.countries.get(GameBean.currentNumber-2)}
+            </c:if>
+            <h2>Game Over</h2>
+            <p>You scored ${GameBean.currentScore} out of ${GameBean.totalQuestions} possible questions </p>
         </c:if>
-        <h1>${GameBean.countries.get(GameBean.currentNumber-1)}</h1>
-        <img src="${GameBean.urls.get(GameBean.currentNumber-1)}" />
         
-        <form action="GameServlet2" method="POST">
-            Enter the country: <input type="text" name="country" value="" />
-            <input type="submit" value="Submit" name="submit" />
-        </form>
+        <c:if test="${GameBean.currentNumber <= GameBean.totalQuestions}">
+
+            <c:if test = "${(GameBean.correct == false) && (GameBean.currentNumber > 1)}">
+                <h2>Incorrect. The correct answer was ${GameBean.countries.get(GameBean.currentNumber-2)}
+            </c:if>
+            <c:if test="${(GameBean.correct == true) && (GameBean.currentNumber > 1)}">
+                <h2>Correct. The country was ${GameBean.countries.get(GameBean.currentNumber-2)}
+            </c:if>
+            <h1>${GameBean.countries.get(GameBean.currentNumber-1)}</h1>
+            <img src="${GameBean.urls.get(GameBean.currentNumber-1)}" />
+
+            <form action="GameServlet2" method="POST" autocomplete="off">
+                Enter the country: <input type="text" name="country" value="" autocomplete="off"/>
+                <input type="submit" value="Submit" name="submit" />
+            </form>
+        </c:if>
     </body>
 </html>

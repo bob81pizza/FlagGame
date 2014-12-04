@@ -33,9 +33,16 @@ public class GameServlet2 extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+        RequestDispatcher dispatcher;
+        
         HttpSession session = request.getSession();
         Game g = (Game)session.getAttribute("GameBean");
         
+        if(g.getCurrentNumber() > g.getTotalQuestions()){
+            dispatcher = request.getRequestDispatcher("gameOver.jsp");
+            dispatcher.forward(request, response);
+        }
+                
         String answer = request.getParameter("country");
         
         String trimAnswer = answer.trim().toLowerCase();
@@ -49,13 +56,8 @@ public class GameServlet2 extends HttpServlet {
             g.setCorrect(false);
         }
         g.setCurrentNumber(g.getCurrentNumber()+1);
+     
 
-        RequestDispatcher dispatcher;
-        
-        if(g.getCurrentNumber() > g.getTotalQuestions()){
-            dispatcher = request.getRequestDispatcher("gameOver.jsp");
-            dispatcher.forward(request, response);
-        }
         dispatcher = request.getRequestDispatcher("flagGame.jsp");
         dispatcher.forward(request, response);
 
