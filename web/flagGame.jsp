@@ -26,7 +26,7 @@
         </c:if>
         
         <c:if test="${GameBean.currentNumber <= GameBean.totalQuestions}">
-
+            <p>Question ${GameBean.currentNumber} out of ${GameBean.totalQuestions}</p>
             <c:if test = "${(GameBean.correct == false) && (GameBean.currentNumber > 1)}">
                 <h2>Incorrect. The correct answer was ${GameBean.countries.get(GameBean.currentNumber-2)}
             </c:if>
