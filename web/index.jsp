@@ -15,6 +15,7 @@
         <title>Flag Game</title>
     </head>
     <body>
+        <h1>Welcome to Chris's Awesome Flag Game!</h1>
         <form action="GameServlet" method="POST">
             Enter your name: <input type="text" name="name" value="" />
             <input type="submit" value="Start Game" name="submit" />

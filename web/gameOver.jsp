@@ -10,10 +10,12 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Flag Game</title>
     </head>
     <body>
         <h1>Game Over!</h1>
         <p>You scored ${GameBean.currentScore} out of ${GameBean.totalQuestions} possible questions </p>
+        
+        <p><a href="/FlagGame">Play Again</a></p>
     </body>
 </html>
