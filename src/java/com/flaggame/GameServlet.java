@@ -46,26 +46,25 @@ public class GameServlet extends HttpServlet {
         List<String> countries = new ArrayList<String>();
         List<String> urls = new ArrayList<String>();
         String name = request.getParameter("name");
-
+        
+        game.setUrls(urls);
+        game.setCountries(countries);
+        game.setPlayerName(name);
+        game.setCurrentNumber(1);
+        game.setCurrentScore(0);
+        game.setTotalQuestions(4);
+            
         try{
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             String connectionURL = "jdbc:derby://localhost:1527/flags";
             conn = DriverManager.getConnection(connectionURL, "test", "test");
             st = conn.createStatement();
-            String q1 = new String("SELECT * FROM TEST.FLAGS ORDER BY flag_id ASC");
+            String q1 = "SELECT * FROM TEST.FLAGS order by random() offset 0 rows fetch next " + game.getTotalQuestions() + " row only" ;
             rs =  st.executeQuery(q1);
             while(rs.next()){
                 countries.add(rs.getString("country_name"));
                 urls.add(rs.getString("url_large"));                
             }
-
-            game.setUrls(urls);
-            game.setCountries(countries);
-            game.setPlayerName(name);
-            game.setCurrentNumber(1);
-            game.setCurrentScore(0);
-            game.setTotalQuestions(2);
-            
         }
         
         catch(Exception e){

@@ -36,10 +36,12 @@
             <h1>${GameBean.countries.get(GameBean.currentNumber-1)}</h1>
             <img src="${GameBean.urls.get(GameBean.currentNumber-1)}" />
 
-            <form action="GameServlet2" method="POST" autocomplete="off">
+            <form name="flagForm" action="GameServlet2" method="POST" autocomplete="off" onsubmit="return(validateCountry())">
                 Enter the country: <input type="text" name="country" value="" autocomplete="off"/>
                 <input type="submit" value="Submit" name="submit" />
             </form>
+            <p id="error"></p>
         </c:if>
+            <script lang="javascript" type="text/javascript" src="validate.js"></script>
     </body>
 </html>

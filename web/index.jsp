@@ -16,9 +16,11 @@
     </head>
     <body>
         <h1>Welcome to Chris's Awesome Flag Game!</h1>
-        <form action="GameServlet" method="POST">
+        <form name="nameForm" action="GameServlet" method="POST" onsubmit="return(validateName());">
             Enter your name: <input type="text" name="name" value="" />
             <input type="submit" value="Start Game" name="submit" />
         </form>
+        <p id="error"></p>
+        <script lang="javascript" type="text/javascript" src="validate.js"></script> 
     </body>
 </html>
