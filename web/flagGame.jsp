@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Flag Game</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <c:if test="${GameBean.currentNumber > GameBean.totalQuestions}">
@@ -34,10 +35,13 @@
                 <h2>Correct. The country was ${GameBean.countries.get(GameBean.currentNumber-2)}
             </c:if>
             <h1>${GameBean.countries.get(GameBean.currentNumber-1)}</h1>
-            <img src="${GameBean.urls.get(GameBean.currentNumber-1)}" />
+            <div id="flag">
+                <img src="${GameBean.urls.get(GameBean.currentNumber-1)}" />
+            </div>
 
             <form name="flagForm" action="GameServlet2" method="POST" autocomplete="off" onsubmit="return(validateCountry())">
-                Enter the country: <input type="text" name="country" value="" autocomplete="off"/>
+                <label for="country">Enter the country: </label>
+                    <input type="text" name="country" value="" autocomplete="off"/>
                 <input type="submit" value="Submit" name="submit" />
             </form>
             <p id="error"></p>

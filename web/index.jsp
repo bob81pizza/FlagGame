@@ -12,14 +12,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <title>Flag Game</title>
     </head>
     <body>
-        <h1>Welcome to Chris's Awesome Flag Game!</h1>
-        <form name="nameForm" action="GameServlet" method="POST" onsubmit="return(validateName());">
-            Enter your name: <input type="text" name="name" value="" />
-            <input type="submit" value="Start Game" name="submit" />
-        </form>
+        <h1 id="welcome">Welcome to Chris's Awesome Flag Game!</h1>
+            <form name="nameForm" action="GameServlet" method="POST" onsubmit="return(validateName());">
+                <p><label for="name">Enter your name:</label></p>
+                <p><input type="text" name="name" value="" /></p>
+                <p><input type="submit" value="Start Game" name="submit" /></p>
+            </form>
         <p id="error"></p>
         <script lang="javascript" type="text/javascript" src="validate.js"></script> 
     </body>

@@ -1,0 +1,90 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 5, 2014, 5:45:24 PM
+    Author     : Chris
+*/
+
+body{
+    margin: 0px auto;
+    width: 70%;
+    border-width: 5px;
+    border-style: dashed;
+    border-color: black;
+}
+
+#welcome{
+    text-align: center;
+}
+
+#error{
+    text-align: center;
+}
+
+#flag img{
+    display: block;
+    margin: auto;
+    max-width: 75%;
+    min-width:25%;
+}
+
+form { 
+       padding: 1.5em; 
+       width: 50%; 
+       display: block; 
+       background: #FAFAFA; 
+       margin: 0 auto;
+}
+
+input, textarea{
+    line-height: 2em;
+    padding: .5em;
+    width: 75%;
+    border: 1px solid #E5E5E5;
+    outline: 0;
+    font: normal 15px/150% Verdana, sans-serif;
+
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,.1);
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
+
+    background: -webkit-linear-gradient(top, #EEE 0px, #FFF 25px);
+    background: -moz-linear-gradient(top, #EEE 0px, #FFF 25px);
+}
+input:hover, input:focus,
+textarea:hover, textarea:focus {
+	border-color: #C9C9C9;
+
+	-webkit-box-shadow: 0 0 8px rgba(0,0,0,.15);
+	-moz-box-shadow: 0 0 8px rgba(0,0,0,.15);
+	box-shadow: 0 0 8px rgba(0,0,0,.15);
+}
+
+input[type=submit] {
+	width: auto;
+	padding: .8em 1em;
+	background: #617798;
+	border: 0;
+	font-size: .85em;
+	font-weight: bold;
+	color: #FFFFFF;
+	-moz-border-radius: .4em;
+	-webkit-border-radius: .4em;
+	cursor: pointer;
+     
+}
+
+input[type=submit]:hover {
+	background: #7387A6;
+	-webkit-box-shadow: 1px 1px 8px rgba(0,0,0,.4);
+}
+
+label {
+	padding-left: .1em;
+	color: #808080;
+	display: inline-block;
+	width: 50%;
+}
