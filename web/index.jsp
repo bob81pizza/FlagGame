@@ -21,6 +21,12 @@
             <form name="nameForm" action="GameServlet" method="POST" onsubmit="return(validateName());">
                 <p><label for="name">Enter your name:</label></p>
                 <p><input type="text" name="name" value="" /></p>
+                <p><label for="mydropdown">Choose number of questions</label>
+                <select name="mydropdown">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
                 <p><input type="submit" value="Start Game" name="submit" /></p>
             </form>
         <p id="error"></p>

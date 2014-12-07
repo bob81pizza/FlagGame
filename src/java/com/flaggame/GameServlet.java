@@ -46,13 +46,15 @@ public class GameServlet extends HttpServlet {
         List<String> countries = new ArrayList<String>();
         List<String> urls = new ArrayList<String>();
         String name = request.getParameter("name");
+        String stringNumQuestions = request.getParameter("mydropdown");
+        int numQuestions = Integer.parseInt(stringNumQuestions);
         
         game.setUrls(urls);
         game.setCountries(countries);
         game.setPlayerName(name);
         game.setCurrentNumber(1);
         game.setCurrentScore(0);
-        game.setTotalQuestions(4);
+        game.setTotalQuestions(numQuestions);
             
         try{
             Class.forName("org.apache.derby.jdbc.ClientDriver");

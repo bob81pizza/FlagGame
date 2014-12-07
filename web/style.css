@@ -11,17 +11,15 @@ and open the template in the editor.
 body{
     margin: 0px auto;
     width: 70%;
-    border-width: 5px;
-    border-style: dashed;
-    border-color: black;
-
+    font-family: Arial;
 }
 #contentWrapper{
     width:100%;
     margin-bottom: 3em;
     padding-top: 2em;
     padding-bottom: 3em;
-    background-image: url("img/light_grey.jpg");    
+    background-image: url("img/light_grey.jpg");   
+    height:100%;
 }
 #welcome{
     text-align: center;
@@ -117,6 +115,29 @@ label {
 	color: #808080;
 	display: inline-block;
 	width: 50%;
+}
+
+a{
+    font-size: 1.5em;
+}
+
+a:link {
+    color: #666666;
+    text-decoration: none;
+}
+ 
+a:active {
+    color: #B73045;
+    text-decoration: none;
+}
+ 
+a:visited {
+    color: #9966FF;
+    text-decoration: none;
+}
+a:hover {
+    color: #B73045;
+    text-decoration: none;
 }
 
 @media all and (max-width: 550px){
