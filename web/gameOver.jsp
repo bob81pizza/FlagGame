@@ -10,12 +10,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <title>Flag Game</title>
     </head>
     <body>
-        <h1>Game Over!</h1>
-        <p>You scored ${GameBean.currentScore} out of ${GameBean.totalQuestions} possible questions </p>
-        
-        <p><a href="/FlagGame">Play Again</a></p>
+        <div id="contentWrapper">
+            <div class="gameOver">
+                <h2>Game Over!</h2>
+                <p>You scored ${GameBean.currentScore} out of ${GameBean.totalQuestions} possible questions </p>
+                <p><a href="/FlagGame">Play Again</a></p>
+            </div>
+        </div>
     </body>
 </html>

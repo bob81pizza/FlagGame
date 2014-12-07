@@ -14,14 +14,40 @@ body{
     border-width: 5px;
     border-style: dashed;
     border-color: black;
-}
 
+}
+#contentWrapper{
+    width:100%;
+    margin-bottom: 3em;
+    padding-top: 2em;
+    padding-bottom: 3em;
+    background-image: url("img/light_grey.jpg");    
+}
 #welcome{
     text-align: center;
 }
 
 #error{
     text-align: center;
+    font-size: 2em;
+    color: red;
+}
+
+.correct{
+    text-align:center;
+    font-size: 1.75em;
+    color: green;
+    padding-bottom: .5em;
+}
+.incorrect{
+    text-align: center;
+    font-size: 1.75em;
+    color: red;
+    padding-dottom: .5em;
+}
+
+.gameOver{
+    text-align:center;
 }
 
 #flag img{
@@ -29,8 +55,12 @@ body{
     margin: auto;
     max-width: 75%;
     min-width:25%;
+    padding-bottom:2em;
 }
 
+#question{
+    text-align:center;
+}
 form { 
        padding: 1.5em; 
        width: 50%; 
@@ -87,4 +117,24 @@ label {
 	color: #808080;
 	display: inline-block;
 	width: 50%;
+}
+
+@media all and (max-width: 550px){
+    body{
+        width:100%;
+    }
+    form{
+        width:75%;
+    }
+    .correct, .incorrect{
+        font-size: 1.5em;
+    }
+    #error{
+        font-size: 1.5em;
+    }
+}
+@media all and (max-width: 660px) and (min-width: 551px){
+    form{
+        width:75%;
+    }
 }
