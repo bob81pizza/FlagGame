@@ -159,3 +159,9 @@ a:hover {
         width:75%;
     }
 }
+
+@media all and (max-width:1204px){
+    input[type=submit]{
+        margin-top:.5em;
+    }
+}
